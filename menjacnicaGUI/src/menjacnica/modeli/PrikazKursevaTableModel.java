@@ -4,7 +4,7 @@ import javax.swing.table.AbstractTableModel;
 
 public class PrikazKursevaTableModel extends AbstractTableModel {
 
-	private String[] kolone = {"Sifra", "Skraceni naziv", "Prodajni", "Srednji", "Kupovni", "Naziv"};
+	private String[] kolone = { "Sifra", "Skraceni naziv", "Prodajni", "Srednji", "Kupovni", "Naziv" };
 
 	@Override
 	public int getColumnCount() {
@@ -24,7 +24,7 @@ public class PrikazKursevaTableModel extends AbstractTableModel {
 	}
 
 	@Override
-	 public String getColumnName(int column) {
-	  return kolone[column];
+	public String getColumnName(int column) {
+		return kolone[column];
 	}
 }

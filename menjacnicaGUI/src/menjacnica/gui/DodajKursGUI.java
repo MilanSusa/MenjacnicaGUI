@@ -28,7 +28,7 @@ public class DodajKursGUI extends JFrame {
 	private JTextField txtProdajniKurs;
 	private JTextField txtKupovniKurs;
 	private JTextField txtSrednjiKurs;
-	private JTextField txtSkraceniKurs;
+	private JTextField txtSkraceniNaziv;
 	private JButton btnDodaj;
 	private JButton btnOdustani;
 
@@ -72,7 +72,7 @@ public class DodajKursGUI extends JFrame {
 		contentPane.add(getTxtProdajniKurs());
 		contentPane.add(getTxtKupovniKurs());
 		contentPane.add(getTxtSrednjiKurs());
-		contentPane.add(getTxtSkraceniKurs());
+		contentPane.add(getTxtSkraceniNaziv());
 		contentPane.add(getBtnDodaj());
 		contentPane.add(getBtnOdustani());
 	}
@@ -170,13 +170,13 @@ public class DodajKursGUI extends JFrame {
 		return txtSrednjiKurs;
 	}
 
-	private JTextField getTxtSkraceniKurs() {
-		if (txtSkraceniKurs == null) {
-			txtSkraceniKurs = new JTextField();
-			txtSkraceniKurs.setColumns(10);
-			txtSkraceniKurs.setBounds(270, 208, 164, 23);
+	private JTextField getTxtSkraceniNaziv() {
+		if (txtSkraceniNaziv == null) {
+			txtSkraceniNaziv = new JTextField();
+			txtSkraceniNaziv.setColumns(10);
+			txtSkraceniNaziv.setBounds(270, 208, 164, 23);
 		}
-		return txtSkraceniKurs;
+		return txtSkraceniNaziv;
 	}
 
 	private JButton getBtnDodaj() {
@@ -188,7 +188,8 @@ public class DodajKursGUI extends JFrame {
 					try {
 						tekst += "Sifra: " + txtSifra.getText() + " Naziv: " + txtNaziv.getText() + " Prodajni kurs: "
 								+ txtProdajniKurs.getText() + " Kupovni kurs: " + txtKupovniKurs.getText()
-								+ " Srednji kurs: " + txtSrednjiKurs.getText() + " Naziv: " + txtNaziv.getText();
+								+ " Srednji kurs: " + txtSrednjiKurs.getText() + " Skraceni naziv: "
+								+ txtSkraceniNaziv.getText();
 						MenjacnicaGUI.dodajKurs(tekst);
 					} catch (Exception ex) {
 						System.out.println("Greska: " + ex.getMessage());

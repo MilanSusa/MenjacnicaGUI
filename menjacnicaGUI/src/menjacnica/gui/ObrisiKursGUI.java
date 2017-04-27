@@ -27,7 +27,7 @@ public class ObrisiKursGUI extends JFrame {
 	private JTextField txtProdajniKurs;
 	private JTextField txtKupovniKurs;
 	private JTextField txtSrednjiKurs;
-	private JTextField txtSkraceniKurs;
+	private JTextField txtSkraceniNaziv;
 	private JButton btnObrisi;
 	private JButton btnOdustani;
 	private JCheckBox chckbxZaistaObrisiKurs;
@@ -72,7 +72,7 @@ public class ObrisiKursGUI extends JFrame {
 		contentPane.add(getTxtProdajniKurs());
 		contentPane.add(getTxtKupovniKurs());
 		contentPane.add(getTxtSrednjiKurs());
-		contentPane.add(getTxtSkraceniKurs());
+		contentPane.add(getTxtSkraceniNaziv());
 		contentPane.add(getBtnObrisi());
 		contentPane.add(getBtnOdustani());
 		contentPane.add(getChckbxZaistaObrisiKurs());
@@ -176,14 +176,14 @@ public class ObrisiKursGUI extends JFrame {
 		return txtSrednjiKurs;
 	}
 
-	private JTextField getTxtSkraceniKurs() {
-		if (txtSkraceniKurs == null) {
-			txtSkraceniKurs = new JTextField();
-			txtSkraceniKurs.setEditable(false);
-			txtSkraceniKurs.setColumns(10);
-			txtSkraceniKurs.setBounds(270, 174, 164, 23);
+	private JTextField getTxtSkraceniNaziv() {
+		if (txtSkraceniNaziv == null) {
+			txtSkraceniNaziv = new JTextField();
+			txtSkraceniNaziv.setEditable(false);
+			txtSkraceniNaziv.setColumns(10);
+			txtSkraceniNaziv.setBounds(270, 174, 164, 23);
 		}
-		return txtSkraceniKurs;
+		return txtSkraceniNaziv;
 	}
 
 	private JButton getBtnObrisi() {
@@ -196,7 +196,8 @@ public class ObrisiKursGUI extends JFrame {
 					try {
 						tekst += "Sifra: " + txtSifra.getText() + " Naziv: " + txtNaziv.getText() + " Prodajni kurs: "
 								+ txtProdajniKurs.getText() + " Kupovni kurs: " + txtKupovniKurs.getText()
-								+ " Srednji kurs: " + txtSrednjiKurs.getText() + " Naziv: " + txtNaziv.getText();
+								+ " Srednji kurs: " + txtSrednjiKurs.getText() + " Skraceni naziv: "
+								+ txtSkraceniNaziv.getText();
 						MenjacnicaGUI.dodajKurs(tekst);
 					} catch (Exception ex) {
 						System.out.println("Greska: " + ex.getMessage());
