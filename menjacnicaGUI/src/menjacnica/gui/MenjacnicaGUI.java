@@ -20,6 +20,7 @@ import javax.swing.JFileChooser;
 
 import java.awt.FlowLayout;
 import java.awt.Frame;
+import java.awt.TextArea;
 
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
@@ -61,7 +62,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem mntmObrisiKurs;
 	private JMenuItem mntmIzvrsiZamenu;
 	private JScrollPane scrollPaneDonji;
-	private JTextArea textArea;
+	private static JTextArea textArea;
 	private static MenjacnicaGUI frame = new MenjacnicaGUI();
 
 	/**
@@ -106,6 +107,10 @@ public class MenjacnicaGUI extends JFrame {
 		contentPane.add(getPanelDesni(), BorderLayout.EAST);
 		contentPane.add(getPanelSrednji(), BorderLayout.CENTER);
 		contentPane.add(getPanelDonji(), BorderLayout.SOUTH);
+	}
+
+	public static void dodajKurs(String tekst) {
+		textArea.setText(textArea.getText() + tekst + "\n");
 	}
 
 	public static void ugasiAplikaciju() {
@@ -243,6 +248,13 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnDodaj() {
 		if (btnDodaj == null) {
 			btnDodaj = new JButton("Dodaj kurs");
+			btnDodaj.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					DodajKursGUI dodajkurs = new DodajKursGUI();
+					dodajkurs.setVisible(true);
+					dodajkurs.setLocationRelativeTo(null);
+				}
+			});
 			btnDodaj.setPreferredSize(new Dimension(120, 30));
 		}
 		return btnDodaj;
@@ -326,6 +338,13 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmDodajKurs() {
 		if (mntmDodajKurs == null) {
 			mntmDodajKurs = new JMenuItem("Dodaj kurs");
+			mntmDodajKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					DodajKursGUI dodajkurs = new DodajKursGUI();
+					dodajkurs.setVisible(true);
+					dodajkurs.setLocationRelativeTo(null);
+				}
+			});
 		}
 		return mntmDodajKurs;
 	}
